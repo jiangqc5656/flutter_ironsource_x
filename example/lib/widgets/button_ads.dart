@@ -66,7 +66,7 @@ class _ButtonAdsWidgetState extends State<ButtonAdsWidget> with IronSourceListen
   void showInterstitial() async {
     if (await IronSource.isInterstitialReady()) {
       // showHideBanner();
-      IronSource.showInterstitial();
+      IronSource.showInterstitial(null);
     } else {
       print(
         "Interstial is not ready. use 'Ironsource.loadInterstial' before showing it",
@@ -86,7 +86,7 @@ class _ButtonAdsWidgetState extends State<ButtonAdsWidget> with IronSourceListen
   void showRewardedVideo() async {
     if (await IronSource.isRewardedVideoAvailable()) {
       // showHideBanner();
-      IronSource.showRewardedVideo();
+      IronSource.showRewardedVideo(null);
     } else {
       print("RewardedVideo not available");
     }

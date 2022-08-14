@@ -51,19 +51,28 @@ class IronSource {
     await _channel.invokeMethod('loadInterstitial');
   }
 
-  static Future<dynamic> showInterstitial() async {
-    await _channel.invokeMethod('showInterstitial');
+  static Future<dynamic> showInterstitial(String? placementName) async {
+    if (placementName == null) {
+      await _channel.invokeMethod('showInterstitial');
+    } else {
+      await _channel.invokeMethod('showInterstitial', { 'placementName': placementName });
+    }
   }
 
-  static Future<dynamic> showRewardedVideo() async {
-    await _channel.invokeMethod('showRewardedVideo');
+  static Future<dynamic> showRewardedVideo(String? placementName) async {
+    if (placementName == null) {
+      await _channel.invokeMethod('showRewardedVideo');
+    } else {
+      await _channel.invokeMethod('showRewardedVideo', { 'placementName': placementName });
+    }
   }
 
   static Future<dynamic> showOfferwall(String? placementName) async {
-    var pname = placementName ?? "DefaultOfferWall";
-    await _channel.invokeMethod('showOfferwall', {
-      'placementName': pname
-    });
+    if (placementName == null) {
+      await _channel.invokeMethod('showOfferwall');
+    } else {
+      await _channel.invokeMethod('showOfferwall', { 'placementName': placementName });
+    }
   }
 
   static Future<dynamic> isInterstitialReady() async {

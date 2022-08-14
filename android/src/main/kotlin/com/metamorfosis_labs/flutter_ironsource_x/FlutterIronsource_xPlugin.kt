@@ -56,7 +56,11 @@ class FlutterIronsource_xPlugin: FlutterPlugin, MethodCallHandler, ActivityAware
       IronSource.loadInterstitial()
       result.success(null)
     } else if (call.method == IronSourceConsts.SHOW_INTERSTITIAL) {
-      IronSource.showInterstitial()
+      if (call.hasArgument("placementName")) {
+        IronSource.showInterstitial(call.argument<String>("placementName")!!)
+      } else {
+        IronSource.showInterstitial()
+      }
       result.success(null)
     } else if (call.method == IronSourceConsts.IS_INTERSTITIAL_READY) {
       result.success(IronSource.isInterstitialReady())
@@ -65,10 +69,18 @@ class FlutterIronsource_xPlugin: FlutterPlugin, MethodCallHandler, ActivityAware
     } else if (call.method == IronSourceConsts.IS_OFFERWALL_AVAILABLE) {
       result.success(IronSource.isOfferwallAvailable())
     } else if (call.method == IronSourceConsts.SHOW_OFFERWALL) {
-      IronSource.showOfferwall(call.argument<String>("placementName"))
+      if (call.hasArgument("placementName")) {
+        IronSource.showOfferwall(call.argument<String>("placementName")!!)
+      } else {
+        IronSource.showOfferwall()
+      }
       result.success(null)
     } else if (call.method == IronSourceConsts.SHOW_REWARDED_VIDEO) {
-      IronSource.showRewardedVideo()
+      if (call.hasArgument("placementName")) {
+        IronSource.showRewardedVideo(call.argument<String>("placementName")!!)
+      } else {
+        IronSource.showRewardedVideo()
+      }
       result.success(null)
     } else if (call.method == "validateIntegration") {
       IntegrationHelper.validateIntegration(mActivity)
