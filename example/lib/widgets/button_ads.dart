@@ -11,15 +11,10 @@ class ButtonAdsWidget extends StatefulWidget {
   State<ButtonAdsWidget> createState() => _ButtonAdsWidgetState();
 }
 
-class _ButtonAdsWidgetState extends State<ButtonAdsWidget>
-    with IronSourceListener, WidgetsBindingObserver {
-  final String appKey =
-      "85460dcd"; // "85460dcd"; // change this with your appKey
+class _ButtonAdsWidgetState extends State<ButtonAdsWidget> with IronSourceListener, WidgetsBindingObserver {
+  final String appKey = "85460dcd"; // "85460dcd"; // change this with your appKey
 
-  bool rewardeVideoAvailable = false,
-      offerwallAvailable = false,
-      showBanner = false,
-      interstitialReady = false;
+  bool rewardeVideoAvailable = false, offerwallAvailable = false, showBanner = false, interstitialReady = false;
   @override
   void initState() {
     WidgetsBinding.instance.addObserver(this);
@@ -82,7 +77,7 @@ class _ButtonAdsWidgetState extends State<ButtonAdsWidget>
   void showOfferwall() async {
     if (await IronSource.isOfferwallAvailable()) {
       // showHideBanner();
-      IronSource.showOfferwall();
+      IronSource.showOfferwall(null);
     } else {
       print("Offerwall not available");
     }
