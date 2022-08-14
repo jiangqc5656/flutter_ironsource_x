@@ -65,7 +65,7 @@ class FlutterIronsource_xPlugin: FlutterPlugin, MethodCallHandler, ActivityAware
     } else if (call.method == IronSourceConsts.IS_OFFERWALL_AVAILABLE) {
       result.success(IronSource.isOfferwallAvailable())
     } else if (call.method == IronSourceConsts.SHOW_OFFERWALL) {
-      IronSource.showOfferwall()
+      IronSource.showOfferwall(call.argument<String>("placementName"))
       result.success(null)
     } else if (call.method == IronSourceConsts.SHOW_REWARDED_VIDEO) {
       IronSource.showRewardedVideo()

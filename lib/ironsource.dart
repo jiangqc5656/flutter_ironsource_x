@@ -6,8 +6,7 @@ import 'models.dart';
 export 'banner.dart';
 
 class IronSource {
-  static const MethodChannel _channel =
-      MethodChannel("com.metamorfosis_labs.flutter_ironsource_x");
+  static const MethodChannel _channel = MethodChannel("com.metamorfosis_labs.flutter_ironsource_x");
   static IronSourceListener? _listener;
   static IronSourceListener? getListener() {
     return _listener!;
@@ -29,7 +28,9 @@ class IronSource {
   }
 
   static Future<dynamic> shouldTrackNetworkState(bool state) async {
-    await _channel.invokeMethod('shouldTrackNetworkState', {'state': state});
+    await _channel.invokeMethod('shouldTrackNetworkState', {
+      'state': state
+    });
   }
 
   static Future<dynamic> validateIntegration() async {
@@ -37,7 +38,9 @@ class IronSource {
   }
 
   static Future<dynamic> setUserId(String userId) async {
-    await _channel.invokeMethod('setUserId', {'userId': userId});
+    await _channel.invokeMethod('setUserId', {
+      'userId': userId
+    });
   }
 
   static Future<dynamic> getAdvertiserId() async {
@@ -56,8 +59,11 @@ class IronSource {
     await _channel.invokeMethod('showRewardedVideo');
   }
 
-  static Future<dynamic> showOfferwall() async {
-    await _channel.invokeMethod('showOfferwall');
+  static Future<dynamic> showOfferwall(String? placementName) async {
+    var pname = placementName ?? "DefaultOfferWall";
+    await _channel.invokeMethod('showOfferwall', {
+      'placementName': pname
+    });
   }
 
   static Future<dynamic> isInterstitialReady() async {
@@ -95,19 +101,11 @@ abstract class IronSourceListener {
     } else if (call.method == ON_INTERSTITIAL_AD_SHOW_SUCCEEDED) {
       onInterstitialAdShowSucceeded();
     } else if (call.method == ON_INTERSTITIAL_AD_LOAD_FAILED) {
-      onInterstitialAdLoadFailed(IronSourceError(
-          errorCode: call.arguments["errorCode"],
-          errorMessage: call.arguments["errorMessage"]));
+      onInterstitialAdLoadFailed(IronSourceError(errorCode: call.arguments["errorCode"], errorMessage: call.arguments["errorMessage"]));
     } else if (call.method == ON_INTERSTITIAL_AD_SHOW_FAILED) {
-      onInterstitialAdShowFailed(IronSourceError(
-          errorCode: call.arguments["errorCode"],
-          errorMessage: call.arguments["errorMessage"]));
+      onInterstitialAdShowFailed(IronSourceError(errorCode: call.arguments["errorCode"], errorMessage: call.arguments["errorMessage"]));
     } else if (call.method == ON_REWARDED_VIDEO_AD_CLICKED) {
-      onRewardedVideoAdClicked(Placement(
-          placementId: call.arguments["placementid"],
-          placementName: call.arguments["placementName"],
-          rewardAmount: call.arguments["rewardAmount"],
-          rewardName: call.arguments["rewardName"]));
+      onRewardedVideoAdClicked(Placement(placementId: call.arguments["placementid"], placementName: call.arguments["placementName"], rewardAmount: call.arguments["rewardAmount"], rewardName: call.arguments["rewardName"]));
     } else if (call.method == ON_REWARDED_VIDEO_AD_CLOSED) {
       onRewardedVideoAdClosed();
     } else if (call.method == ON_REWARDED_VIDEO_AD_ENDED) {
@@ -115,40 +113,27 @@ abstract class IronSourceListener {
     } else if (call.method == ON_REWARDED_VIDEO_AD_OPENED) {
       onRewardedVideoAdOpened();
     } else if (call.method == ON_REWARDED_VIDEO_AD_REWARDED) {
-      onRewardedVideoAdRewarded(Placement(
-          placementId: call.arguments["placementid"],
-          placementName: call.arguments["placementName"],
-          rewardAmount: call.arguments["rewardAmount"],
-          rewardName: call.arguments["rewardName"]));
+      onRewardedVideoAdRewarded(Placement(placementId: call.arguments["placementid"], placementName: call.arguments["placementName"], rewardAmount: call.arguments["rewardAmount"], rewardName: call.arguments["rewardName"]));
     } else if (call.method == ON_REWARDED_VIDEO_AD_SHOW_FAILED) {
       onRewardedVideoAdShowFailed(
-        IronSourceError(
-            errorCode: call.arguments["errorCode"],
-            errorMessage: call.arguments["errorMessage"]),
+        IronSourceError(errorCode: call.arguments["errorCode"], errorMessage: call.arguments["errorMessage"]),
       );
     } else if (call.method == ON_REWARDED_VIDEO_AVAILABILITY_CHANGED) {
       onRewardedVideoAvailabilityChanged(call.arguments);
     } else if (call.method == ON_REWARDED_VIDEO_AD_STARTED) {
       onRewardedVideoAdStarted();
     } else if (call.method == ON_OFFERWALL_AD_CREDITED) {
-      onOfferwallAdCredited(OfferwallCredit(
-          credits: call.arguments["credits"],
-          totalCredits: call.arguments["totalCredits"],
-          totalCreditsFlag: call.arguments["totalCreditsFlag"]));
+      onOfferwallAdCredited(OfferwallCredit(credits: call.arguments["credits"], totalCredits: call.arguments["totalCredits"], totalCreditsFlag: call.arguments["totalCreditsFlag"]));
     } else if (call.method == ON_OFFERWALL_AVAILABLE) {
       onOfferwallAvailable(call.arguments);
     } else if (call.method == ON_OFFERWALL_CLOSED) {
       onOfferwallClosed();
     } else if (call.method == ON_OFFERWALL_CREDITS_FAILED) {
-      onGetOfferwallCreditsFailed(IronSourceError(
-          errorCode: call.arguments["errorCode"],
-          errorMessage: call.arguments["errorMessage"]));
+      onGetOfferwallCreditsFailed(IronSourceError(errorCode: call.arguments["errorCode"], errorMessage: call.arguments["errorMessage"]));
     } else if (call.method == ON_OFFERWALL_OPENED) {
       onOfferwallOpened();
     } else if (call.method == ON_OFFERWALL_SHOW_FAILED) {
-      onOfferwallShowFailed(IronSourceError(
-          errorCode: call.arguments["errorCode"],
-          errorMessage: call.arguments["errorMessage"]));
+      onOfferwallShowFailed(IronSourceError(errorCode: call.arguments["errorCode"], errorMessage: call.arguments["errorMessage"]));
     }
   }
 
