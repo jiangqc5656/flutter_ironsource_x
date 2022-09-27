@@ -16,7 +16,6 @@ class _BannerWidgetState extends State<BannerWidget> {
   @override
   Widget build(BuildContext context) {
     return Consumer<BannerProvider>(builder: (context, bannerProv, child) {
-      print('Banner');
       return CustomButton(
         label: bannerProv.isBannerShow ? "hide banner" : "Show Banner",
         onPressed: () {

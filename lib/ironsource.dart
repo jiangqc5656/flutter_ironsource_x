@@ -6,7 +6,7 @@ import 'models.dart';
 export 'banner.dart';
 
 class IronSource {
-  static const MethodChannel _channel = MethodChannel("com.metamorfosis_labs.flutter_ironsource_x");
+  static const MethodChannel _channel = MethodChannel("com.bereal.candycash");
   static IronSourceListener? _listener;
   static IronSourceListener? getListener() {
     return _listener!;
@@ -55,7 +55,9 @@ class IronSource {
     if (placementName == null) {
       await _channel.invokeMethod('showInterstitial');
     } else {
-      await _channel.invokeMethod('showInterstitial', { 'placementName': placementName });
+      await _channel.invokeMethod('showInterstitial', {
+        'placementName': placementName
+      });
     }
   }
 
@@ -63,7 +65,9 @@ class IronSource {
     if (placementName == null) {
       await _channel.invokeMethod('showRewardedVideo');
     } else {
-      await _channel.invokeMethod('showRewardedVideo', { 'placementName': placementName });
+      await _channel.invokeMethod('showRewardedVideo', {
+        'placementName': placementName
+      });
     }
   }
 
@@ -71,7 +75,9 @@ class IronSource {
     if (placementName == null) {
       await _channel.invokeMethod('showOfferwall');
     } else {
-      await _channel.invokeMethod('showOfferwall', { 'placementName': placementName });
+      await _channel.invokeMethod('showOfferwall', {
+        'placementName': placementName
+      });
     }
   }
 

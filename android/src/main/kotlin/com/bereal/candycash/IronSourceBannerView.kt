@@ -1,4 +1,4 @@
-package com.metamorfosis_labs.flutter_ironsource_x
+package com.bereal.candycash
 
 import android.app.Activity
 import android.content.Context

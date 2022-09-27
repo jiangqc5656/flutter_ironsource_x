@@ -1,7 +1,7 @@
-package com.metamorfosis_labs.flutter_ironsource_x
+package com.bereal.candycash
 
 object IronSourceConsts {
-    const val MAIN_CHANNEL = "com.metamorfosis_labs.flutter_ironsource_x"
+    const val MAIN_CHANNEL = "com.bereal.candycash"
     const val BANNER_AD_CHANNEL = "$MAIN_CHANNEL/bannerAd"
     const val INTERSTITIAL_CHANNEL = "$MAIN_CHANNEL/interstitialAd"
     const val INIT = "initialize"

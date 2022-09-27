@@ -1,11 +1,10 @@
-const String MAIN_CHANNEL = "com.metamorfosis_labs.flutter_ironsource_x";
+const String MAIN_CHANNEL = "com.bereal.candycash";
 const String INTERSTITIAL_CHANNEL = MAIN_CHANNEL + "/interstitialAd";
 const String BANNER_AD_CHANNEL = MAIN_CHANNEL + "/bannerAd";
 //   Rewarded Video Listener Const
 const String ON_REWARDED_VIDEO_AD_OPENED = "onRewardedVideoAdOpened";
 const String ON_REWARDED_VIDEO_AD_CLOSED = "onRewardedVideoAdClosed";
-const String ON_REWARDED_VIDEO_AVAILABILITY_CHANGED =
-    "onRewardedVideoAvailabilityChanged";
+const String ON_REWARDED_VIDEO_AVAILABILITY_CHANGED = "onRewardedVideoAvailabilityChanged";
 const String ON_REWARDED_VIDEO_AD_STARTED = "onRewardedVideoAdStarted";
 const String ON_REWARDED_VIDEO_AD_ENDED = "onRewardedVideoAdEnded";
 const String ON_REWARDED_VIDEO_AD_REWARDED = "onRewardedVideoAdRewarded";
@@ -26,8 +25,7 @@ const String ON_INTERSTITIAL_AD_READY = "onInterstitialAdReady";
 const String ON_INTERSTITIAL_AD_CLOSED = "onInterstitialAdClosed";
 const String ON_INTERSTITIAL_AD_LOAD_FAILED = "onInterstitialAdLoadFailed";
 const String ON_INTERSTITIAL_AD_SHOW_FAILED = "onInterstitialAdShowFailed";
-const String ON_INTERSTITIAL_AD_SHOW_SUCCEEDED =
-    "onInterstitialAdShowSucceeded";
+const String ON_INTERSTITIAL_AD_SHOW_SUCCEEDED = "onInterstitialAdShowSucceeded";
 const String ON_INTERSTITIAL_AD_CLICKED = "onInterstitialAdClicked";
 
 // Banner Listener Const
