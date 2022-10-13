@@ -39,7 +39,7 @@ flutter:
       # https://flutter.dev/docs/development/packages-and-plugins/developing-packages#plugin-platforms
       # -------------------
       android:
-        package: com.bereal.candycash
+        package: com.bereal.cs_ironsource
         pluginClass: FlutterIronsource_xPlugin
     # -------------------
 

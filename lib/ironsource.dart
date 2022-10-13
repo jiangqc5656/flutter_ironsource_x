@@ -6,7 +6,7 @@ import 'models.dart';
 export 'banner.dart';
 
 class IronSource {
-  static const MethodChannel _channel = MethodChannel("com.bereal.candycash");
+  static const MethodChannel _channel = MethodChannel("com.bereal.cs_ironsource");
   static IronSourceListener? _listener;
   static IronSourceListener? getListener() {
     return _listener!;

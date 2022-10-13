@@ -1,4 +1,4 @@
-const String MAIN_CHANNEL = "com.bereal.candycash";
+const String MAIN_CHANNEL = "com.bereal.cs_ironsource";
 const String INTERSTITIAL_CHANNEL = MAIN_CHANNEL + "/interstitialAd";
 const String BANNER_AD_CHANNEL = MAIN_CHANNEL + "/bannerAd";
 //   Rewarded Video Listener Const

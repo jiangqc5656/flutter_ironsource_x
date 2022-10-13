@@ -1,4 +1,4 @@
-package com.bereal.candycash
+package com.bereal.cs_ironsource
 
 import android.app.Activity
 import android.content.Context

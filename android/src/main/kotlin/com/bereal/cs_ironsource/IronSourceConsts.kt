@@ -1,7 +1,7 @@
-package com.bereal.candycash
+package com.bereal.cs_ironsource
 
 object IronSourceConsts {
-    const val MAIN_CHANNEL = "com.bereal.candycash"
+    const val MAIN_CHANNEL = "com.bereal.cs_ironsource"
     const val BANNER_AD_CHANNEL = "$MAIN_CHANNEL/bannerAd"
     const val INTERSTITIAL_CHANNEL = "$MAIN_CHANNEL/interstitialAd"
     const val INIT = "initialize"

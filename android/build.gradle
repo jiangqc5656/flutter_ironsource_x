@@ -1,4 +1,4 @@
-group 'com.bereal.candycash'
+group 'com.bereal.cs_ironsource'
 version '1.0-SNAPSHOT'
 
 buildscript {
